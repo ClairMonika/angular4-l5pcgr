@@ -1,0 +1,15 @@
+<hello name="{{ name }}"></hello>
+
+<ul class="items">
+  <li *ngFor="let item of listItems">
+    <a>{{ item.studentName }}</a>
+  </li>
+</ul>
+
+<app-paginate
+  [pageSize]="pageSize"
+  [totalRecords]="totalRecords"
+  [currentPage]="currentPage"
+  (setCurrentPageFn)="setCurrentPage($event)"
+  (setPerPageFn)="setPerPageLimit($event)"
+></app-paginate>

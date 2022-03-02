@@ -1,0 +1,53 @@
+<div>{{ page }}</div>
+<div class="grid-container">
+  <div class="result-per-page">
+    Result per page
+    <ul class="per-page">
+      <li
+        *ngFor="let perPage of resultPerPage"
+        [ngClass]="
+          pageSize === perPage
+            ? 'per_page_block per_page_block_active'
+            : 'per_page_block'
+        "
+      >
+        <a (click)="setPerPage(perPage)">{{ perPage }}</a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li
+        [ngClass]="
+          pager.currentPage === 1
+            ? 'pagination__item pagination__item--disabled'
+            : 'pagination__item'
+        "
+      >
+        <a (click)="setPage(pager.currentPage - 1)"> < &nbsp;Previous</a>
+      </li>
+
+      <!-- pages -->
+      <li
+        *ngFor="let page of pager.pages"
+        [ngClass]="
+          pager.currentPage === page
+            ? 'pagination__item pagination__item--active'
+            : 'pagination__item'
+        "
+      >
+        <a (click)="setPage(page)">{{ page }}</a>
+      </li>
+
+      <li
+        [ngClass]="
+          pager.currentPage === pager.totalPages
+            ? 'pagination__item pagination__item--disabled'
+            : 'pagination__item'
+        "
+      >
+        <a (click)="setPage(pager.currentPage + 1)">Next &nbsp;> </a>
+      </li>
+    </ul>
+  </div>
+</div>

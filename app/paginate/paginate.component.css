@@ -1,0 +1,49 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% auto;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+.result-per-page {
+  display: flex;
+  padding-left: 5px;
+  margin-top: 2rem;
+}
+.per-page {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+.per_page_block {
+  padding-left: 5px;
+}
+.per_page_block_active {
+  color: #d25f15;
+}
+.pagination {
+  float: right;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.pagination__item:not(.pagination__item--disabled) {
+  cursor: pointer;
+}
+
+.pagination__item--disabled {
+  color: #999999;
+}
+
+.pagination__item a {
+  padding: 0.5rem 1rem;
+}
+
+.pagination__item--active a {
+  color: #d25f15;
+}
